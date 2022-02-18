@@ -10,6 +10,7 @@ state Selection <<choice>>
 
 [*] --> Thirsty
 Thirsty -> QueueStatus
+Thirsty -down-> Thirsty : refill?
 QueueStatus --> Wait : [peopleInFront != 0]
 QueueStatus -> InsertCoin : [peopleInFront = 0]
 Wait --> InsertCoin : [peopleInFront = 0]
